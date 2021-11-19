@@ -61,7 +61,19 @@ def CardTurn (name) :
             answer = 2
             while(answer==2):
                 answer = input("1ª Opción -> Pedir otra carta  /n2ª Opción -> Visualizar sus cartas  /n3ª Opción -> Finalizar el turno")
-                if (answer)
-                
-            
+                if (answer==1):
+                    i += 1
+                elif (answer==2):
+                    print("/n-> Las cartas son:", deck)
+                    time.sleep(3)
+                else:
+                    choice = 0
+                    return total
+        elif (total ==21):
+            deck.append(number)
+            print("¡Enhorabuena! Usted a conseguido hacer un BlackJack.")
+            return total
+        else:
+            print("¡Otra vez será! Vuelva a intentarlo.")
+            return 0
         
