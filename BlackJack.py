@@ -76,4 +76,14 @@ def CardTurn (name) :
         else:
             print("¡Otra vez será! Vuelva a intentarlo.")
             return 0
+
+#Definimos los nombres de los jugadores
+def PlayerName(playersnumber):
+    for i in range (playersnumber):
+        print("Introduzca aquí el nombre del Jugador", i+1)
+        name = raw_imput()
+        playersname.append(name)
+        print ("-")*50
+
+        
         
