@@ -78,12 +78,23 @@ def CardTurn (name) :
             return 0
 
 #Definimos los nombres de los jugadores
-def PlayerName(playersnumber):
+def PlayersName(playersnumber):
     for i in range (playersnumber):
         print("Introduzca aquí el nombre del Jugador", i+1)
-        name = raw_imput()
-        playersname.append(name)
+        name = raw_input()
+        PlayersName.append(name)
         print ("-")*50
-
+#Definimos el ganador
+def Winner(J1, J2, name):
+    time.sleep(3)
+    if (J1>J2):
+        print(name[0], " finalizó con un total de ", J1, " puntos.")
+    elif (J2>J1):
+        print(name[1], "finalizó con un total de ", J2, "puntos.")
+    elif(J1==J2):
+        print("¡Vaya! Hay un empate. Cada jugador tiene un total de ", J1, "puntos.")
+    else: 
+        print("Ninguno de los dos jugadores ha conseguido una victoria. Intentadlo otra vez.")
+        
         
         
