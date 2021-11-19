@@ -38,5 +38,29 @@ def CardTurn (name) :
                 break
         
         elif (number=="J"):
+            deck.append(number)
+            number = 10
+        elif (number=="Q"):
+            deck.append(number)
+            number = 10
+        elif (number=="K"):
+            deck.append(number)
+            number = 10
             
-
+        else:
+            deck.append(number)
+        
+        
+        total+= number
+        time.sleep(2)
+        if(i>1):
+            print("/n->Su puntuación total es de ", total, "puntos")
+        
+        if(total<21):
+            deck.append(number)
+            answer = 2
+            while(answer==2):
+                answer = input("1ª Opción -> Pedir otra carta  2ª Opción -> Visualizar sus cartas")
+                
+            
+        
