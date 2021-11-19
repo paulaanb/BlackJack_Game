@@ -36,4 +36,7 @@ def CardTurn (name) :
                 print("Usted eligió un número que no esta dentro de los 2 valores predeterminados, por lo tanto no puede seguir jugando.")
                 return 0
                 break
+        
+        elif (number=="J"):
+            
 
