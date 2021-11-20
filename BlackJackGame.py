@@ -78,20 +78,20 @@ def repartirCartas(num,lista,s):
                 if lista[0]=='A':
                     if num+11>21:
                         print("\nNueva Carta: ")
-                        print lista[0]
-                        print ("Total de Cartas:")
-                        print num+valores(lista[0])
+                        print(lista[0])
+                        print("Total de Cartas:")
+                        print(num+valores(lista[0]))
                         return repartirCartas(num+valores(lista[0]),lista,s)
                     else:
                         print("\nNueva Carta: ")
-                        print lista[0]
+                        print (lista[0])
                         print ("Total de Cartas:")
-                        print num+valores(lista[0])
+                        print (num+valores(lista[0]))
                         return repartirCartas(num+11,lista,s+1)
                 print("\nNueva Carta: ")
-                print lista[0]
+                print (lista[0])
                 print ("Total de Cartas:")
-                print num+valores(lista[0])
+                print (num+valores(lista[0]))
                 return repartirCartas(num+valores(lista[0]),lista,s)
         elif num>21&s==0:
             return -1
