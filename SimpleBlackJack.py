@@ -1,5 +1,5 @@
 #Importamos la libreria
-from random import choice, sample
+from random import choice, sample, shuffle
 
 #Establecemos la bliblioteca donde se encuentra la lista de las cartas
 cartas = {
@@ -41,3 +41,11 @@ class BlackJack():
         blackjack().giveCards(2, self.hand)
         blackjack().giveCards(1, self.dealer)
         print("Su mano en esta partida es:\n" + self.hand[0] + '' + self.hand[1] + "\nScore:" + str(blackjack().calculatehand(self.hand)) + "\nDealer:" + self.dealer[0] + "\nScore" + str(blackjack().calculatehand)))
+        decision = input("Ahora debe elegir lo que desea hacer, si continuar la partida o plantarse (Stick/Continue):")
+        if str(decision).lower()== "stick":
+            blackjack().stick(self.hand)
+        elif str(decision).lower() == "continue":
+            blackjack().continue()
+    def stick(self, bunch):
+        shuffle(self.deckofcards)
+        card= 
