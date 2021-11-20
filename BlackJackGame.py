@@ -67,7 +67,7 @@ def repartirCartas(num,lista,s):
             return -1 
         elif num<21:
             print ("\nPor favor, inserte 'Si' para poder recibir mas cartas y 'No' para poder plantarse plantarse.")
-            if raw_input()=="No":
+            if input()=="No":
                 print ("\nAhora es el turno del CPU")
                 if turnoCPU(0,num,lista)==0:
                     return -1
