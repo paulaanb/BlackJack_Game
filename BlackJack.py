@@ -60,7 +60,7 @@ def CardTurn (name) :
             deck.append(number)
             answer = 2
             while(answer==2):
-                answer = input("1ª Opción -> Pedir otra carta  2ª Opción -> Visualizar sus cartas  /n3ª Opción -> Finalizar el turno")
+                answer = input("1ª Opción -> Pedir otra carta  2ª Opción -> Visualizar sus cartas /n3ª Opción -> Finalizar el turno")
                 if (answer==1):
                     i += 1
                 elif (answer==2):

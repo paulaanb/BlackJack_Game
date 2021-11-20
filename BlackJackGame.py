@@ -66,9 +66,9 @@ def repartirCartas(num,lista,s):
         if num==-1:
             return -1 
         elif num<21:
-            print ("\nInserte 'SI' para recibir mas cartas y 'NO' para plantarse?")
-            if raw_input()=="NO":
-                print ("\nTURNO DEL CPU")
+            print ("\nPor favor, inserte 'Si' para poder recibir mas cartas y 'No' para poder plantarse plantarse.")
+            if raw_input()=="No":
+                print ("\nAhora es el turno del CPU")
                 if turnoCPU(0,num,lista)==0:
                     return -1
                 else:
@@ -77,26 +77,26 @@ def repartirCartas(num,lista,s):
                 shuffle(lista)
                 if lista[0]=='A':
                     if num+11>21:
-                        print("\nNueva Carta: ")
+                        print("\nSu nueva carta es: ")
                         print(lista[0])
-                        print("Total de Cartas:")
+                        print("Su número total de cartas es:")
                         print(num+valores(lista[0]))
                         return repartirCartas(num+valores(lista[0]),lista,s)
                     else:
-                        print("\nNueva Carta: ")
+                        print("\nSu nueva carta es: ")
                         print (lista[0])
-                        print ("Total de Cartas:")
+                        print ("Su número total de cartas es:")
                         print (num+valores(lista[0]))
                         return repartirCartas(num+11,lista,s+1)
-                print("\nNueva Carta: ")
+                print("\Su nueva carta es: ")
                 print (lista[0])
-                print ("Total de Cartas:")
+                print ("Su número total de cartas:")
                 print (num+valores(lista[0]))
                 return repartirCartas(num+valores(lista[0]),lista,s)
         elif num>21&s==0:
             return -1
         elif num>21&s>0:
-            print ("A reducida : Nueva suma de cartas = ",num-10)
+            print ("El totral de cartas reducidas genera una nueva suma de cartas de = ",num-10)
             return repartirCartas(num-10,lista,s-1)
  
  #Definimos el turno del CPU            
@@ -109,21 +109,21 @@ def turnoCPU(num,user,lista):
             return 1
         if num<21:
             shuffle(lista)
-            print("\nNueva Carta: ")
-            print lista[0]
-            print ("Total de Cartas:")
-            print num+valores(lista[0])
+            print("\nSu nueva carta es: ")
+            print(lista[0])
+            print ("Su número total de cartas es:")
+            print (num+valores(lista[0]))
             return turnoCPU(num+valores(lista[0]),user,lista)
 
 #Establecemos los comandos y final del juego
 def main():
-    print ("JUEGO DE 21")
-    print ("\nTURNO DEL JUGADOR")
-    print ("\nInserte 'SI' para recibir mas cartas y 'NO' para plantarse")
+    print ("Juego BlackJack")
+    print ("\nAhora es el turno del jugador")
+    print ("\nPor favor, inserte 'Si' para poder recibir más cartas y 'No' para  poder plantarse.")
 
     if repartirCartas(0,valoresEspeciales(lista=[]),0)==(-1):
-        print("\nHAS PERDIDO!")
+        print("\n¡Ha perdido!¡Inténtelo otra vez!")
     else:
-        print("\nHAS GANADO!")
+        print("\n¡Enhorabuena!¡Ha ganado!")
 if __name__ == "__main__":
     main()                       
