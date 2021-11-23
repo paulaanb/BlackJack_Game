@@ -3,12 +3,14 @@ Mi dirección de Github para este repositorio es el siguiente: [Github] (https:/
 En este trabajo hemos creado un juego llamado blackjack, cuyo objetivo es intentar conseguir con la suma de tus cartas el valor 21, pudiendo acercarse a dicho número o pasarse, en cuyo caso se habrá perdido.
 En este caso he creado tres códigos diferentes, a elegir el deseado. Hay un código que cuenta con 2 librerías , random y time, para seleccionar un número de carta al azar y para darle pausa al juego.
 Para no hacer tres diagramas de flujo diferentes, me dispuse a hacer uno centralizado que englobase todo. Se puede ver a continuación:
+<img width="769" alt="Captura de pantalla 2021-11-23 a las 16 49 37" src="https://user-images.githubusercontent.com/91721496/143057185-1d0e881f-dc5a-4d42-91aa-584fb631fe04.png">
 
 
 Dicho esto, los códigos son los siguientes:
--Código 1(BlackJackGame):
 
 ```
+-Código 1(BlackJackGame):
+
 #Importamos Libreria
 from random import randint
 from random import shuffle
