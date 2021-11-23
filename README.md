@@ -8,6 +8,7 @@ Para no hacer tres diagramas de flujo diferentes, me dispuse a hacer uno central
 Dicho esto, los códigos son los siguientes:
 -Código 1(BlackJackGame):
 
+```
 #Importamos Libreria
 from random import randint
 from random import shuffle
@@ -134,7 +135,8 @@ def main():
     else:
         print("\n¡Enhorabuena!¡Ha ganado!")
 if __name__ == "__main__":
-    main()´´´                       
+    main()
+
 
 -Código 2(SimpleBlackJack):
 
@@ -223,7 +225,8 @@ def game():
         print("¡Nos vemos pronto!")
 
 #Creamos la función para generar el juego
-game()´´´
+game()
+
 
 -Código 3(BlackJack):
 
@@ -326,5 +329,5 @@ if (playersnumber==1):
     print("El número total de jugadores es 1.")
     time.sleep(3)
     continuar = input("¿Desea volver a jugar? 1) Si 2) No")
-    del playersname[:]'''
+    del playersname[:]
 
