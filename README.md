@@ -3,10 +3,12 @@ Mi dirección de Github para este repositorio es el siguiente: [Github] (https:/
 En este trabajo hemos creado un juego llamado blackjack, cuyo objetivo es intentar conseguir con la suma de tus cartas el valor 21, pudiendo acercarse a dicho número o pasarse, en cuyo caso se habrá perdido.
 En este caso he creado tres códigos diferentes, a elegir el deseado. Hay un código que cuenta con 2 librerías , random y time, para seleccionar un número de carta al azar y para darle pausa al juego.
 Para no hacer tres diagramas de flujo diferentes, me dispuse a hacer uno centralizado que englobase todo. Se puede ver a continuación:
-https://www.figma.com/file/NvywqMOybvjQgkOjA2ZOED/BlackJack?node-id=0%3A1
+
+
 Dicho esto, los códigos son los siguientes:
 -Código 1(BlackJackGame):
-'''#Importamos Libreria
+
+#Importamos Libreria
 from random import randint
 from random import shuffle
 
@@ -132,10 +134,11 @@ def main():
     else:
         print("\n¡Enhorabuena!¡Ha ganado!")
 if __name__ == "__main__":
-    main()                       
-'''
+    main()´´´                       
+
 -Código 2(SimpleBlackJack):
-'''#Importamos la libreria
+
+#Importamos la libreria
 from random import choice, sample, shuffle
 
 #Establecemos la bliblioteca donde se encuentra la lista de las cartas
@@ -220,10 +223,11 @@ def game():
         print("¡Nos vemos pronto!")
 
 #Creamos la función para generar el juego
-game()'''
+game()´´´
 
 -Código 3(BlackJack):
-'''#Importamos librerias
+
+#Importamos librerias
 import random
 import time
 
