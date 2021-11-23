@@ -21,10 +21,10 @@ def CardTurn (name) :
         number = 0
         naturalnumber = [2, 3, 4, 5, 6, 7, 8, 9, 10]
         
-        print ("/nCarta #", i, ":")
+        print ("\nLa carta tiene un valor de ", i, ":")
         time.sleep (4)
         number = random.choice(cards)
-        print("number")
+        print(number)
         
 #Empezamos a darle valores a las cartas "especiales"
 
@@ -54,17 +54,16 @@ def CardTurn (name) :
         total+= number
         time.sleep(2)
         if(i>1):
-            print("/n->Su puntuación total es de ", total, "puntos")
+            print("\n->Su puntuación total es de ", total, "puntos")
         
         if(total<21):
-            deck.append(number)
             answer = 2
             while(answer==2):
-                answer = input("1ª Opción -> Pedir otra carta  2ª Opción -> Visualizar sus cartas /n3ª Opción -> Finalizar el turno")
+                answer = input("1) Pedir otra carta  2) Visualizar sus cartas 3) Finalizar el turno")
                 if (answer==1):
                     i += 1
                 elif (answer==2):
-                    print("/n-> Las cartas son:", deck)
+                    print("\n-> Las cartas obtuvidas fueron:", deck)
                     time.sleep(3)
                 else:
                     choice = 0
@@ -78,25 +77,24 @@ def CardTurn (name) :
             return 0
 
 #Definimos los nombres de los jugadores
-def PlayersName(playersnumber):
-    PlayersName = []
-    name = input("Introduzca aquí el nombre del Jugador: ")
-    PlayersName.append(name)
+def playersname(playersnumber):
+    for i in range (playersnumber):
+        playersname = []
+        name = input("Introduzca aquí el nombre del Jugador: ")
+        playersname.append(name)
 
 #Main
 continuar = 1
 while continuar != 0:
     print("Vamos a comenzar a jugar al BlackJack.")
-    playersnumber= input("Número de jugadores 1.")
-    PlayersName(playersnumber)
-    
-    if (playersnumber==1):
-        print("Bienvenido, vamos a comenzar a jugar al BlackJack")
-        time.sleep(4)
-        print("Iniciamos a jugar.")
-        time.sleep(2)
-        J1= CardTurn(PlayersName[0])
-        print("El número total de jugadores es 1.")
-        time.sleep(3)
-        continuar = input("¿Desea volver a jugar? 1) Si 2) No")
-        del PlayersName[:]
+    playersnumber= input("Número de jugadores: 1.")
+ 
+if (playersnumber==1):
+    print("Bienvenido, vamos a comenzar a jugar al BlackJack")
+    time.sleep(4)
+    print("Iniciamos a jugar.")
+    time.sleep(2)
+    print("El número total de jugadores es 1.")
+    time.sleep(3)
+    continuar = input("¿Desea volver a jugar? 1) Si 2) No")
+    del playersname[:]

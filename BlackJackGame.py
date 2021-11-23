@@ -66,8 +66,8 @@ def repartirCartas(num,lista,s):
         if num==-1:
             return -1 
         elif num<21:
-            print ("\nPor favor, inserte 'Si' para poder recibir mas cartas y 'No' para poder plantarse plantarse.")
-            if input()=="No":
+            print ("\nVamos a comenzar a jugar al Blackjack, por favor, inserte 'Si' para poder recibir cartas y 'No' para finalizar el juego.")
+            if input()== "No":
                 print ("\nAhora es el turno del CPU")
                 if turnoCPU(0,num,lista)==0:
                     return -1
@@ -79,34 +79,34 @@ def repartirCartas(num,lista,s):
                     if num+11>21:
                         print("\nSu nueva carta es: ")
                         print(lista[0])
-                        print("Su número total de cartas es:")
+                        print("\nSu número total de cartas es:")
                         print(num+valores(lista[0]))
                         return repartirCartas(num+valores(lista[0]),lista,s)
                     else:
                         print("\nSu nueva carta es: ")
                         print (lista[0])
-                        print ("Su número total de cartas es:")
+                        print ("\nSu número total de cartas es:")
                         print (num+valores(lista[0]))
                         return repartirCartas(num+11,lista,s+1)
                 print("\Su nueva carta es: ")
                 print (lista[0])
-                print ("Su número total de cartas:")
+                print ("\nSu número total de cartas:")
                 print (num+valores(lista[0]))
                 return repartirCartas(num+valores(lista[0]),lista,s)
-        elif num>21&s==0:
+        elif num>21 and num==0:
             return -1
-        elif num>21&s>0:
-            print ("El totral de cartas reducidas genera una nueva suma de cartas de = ",num-10)
+        elif num>21 and num>0:
+            print ("\nEl total de cartas reducidas genera una nueva suma de cartas de = ",num-10)
             return repartirCartas(num-10,lista,s-1)
  
  #Definimos el turno del CPU            
 def turnoCPU(num,user,lista):
         if (num<21)&(num>user):
-            return 0
+            print("¡Enhorabuena! Obtuvo más punto que la banca, ha ganado la partida.")
         if num==21:
-            return 0
+            print("¡Enhorabuena! Usted a logrado un Blackjack, ha ganado la partida.")
         if num > 21:
-            return 1
+            print("Lo lamento, su valor es mayor de 21, el ganandor ha sido la banca.")
         if num<21:
             shuffle(lista)
             print("\nSu nueva carta es: ")
@@ -118,8 +118,6 @@ def turnoCPU(num,user,lista):
 #Establecemos los comandos y final del juego
 def main():
     print ("Juego BlackJack")
-    print ("\nAhora es el turno del jugador")
-    print ("\nPor favor, inserte 'Si' para poder recibir más cartas y 'No' para  poder plantarse.")
 
     if repartirCartas(0,valoresEspeciales(lista=[]),0)==(-1):
         print("\n¡Ha perdido!¡Inténtelo otra vez!")

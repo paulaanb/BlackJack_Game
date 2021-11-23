@@ -23,20 +23,20 @@ def game():
     print("Cartas: {}".format(" ".join(cartas.keys())))
     print("Puntos: {}".format(list(cartas.values())))       
 #Establecemos el valor de cada carta
-    print("1\ Iteración estándar sobre un diccionario")
+    print("Los valores de las cartas son los siguientes:")
     for carta, valor in cartas.items():
-        print("la carta {} vale {}".format(carta, valor))
- 
-    print("2\ Iteración ordenada sobre un diccionario")
+        print("La carta {} vale {} puntos.".format(carta, valor))
+    
+    print("Los valores del diccionario de cartas ordenados son:")
     for carta in sorted(cartas.keys()):
-        print("la carta {} vale {}".format(carta, cartas[carta]))
+        print("La carta {} vale {} puntos.".format(carta, cartas[carta]))
 
 #Le adjuntamos una lista al dicctionario de cartas
-    print("3\ Black Jack")
+    print("\nEmpieza el juego de Black Jack")
     lista_cartas = list(cartas)
     
 #Ahora nos disponemos a repartir las dos cartas al jugador y calcular su valor total
-    print("Usted ha seleccionado la carta:", end=" ")
+    print("\nUsted ha seleccionado la carta:", end=" ")
     carta = choice(lista_cartas)
     score = cartas[carta]
     print(carta, end=" ")
@@ -60,25 +60,27 @@ def game():
         else:
             print("Por favor, elija una respuesta permitida")
 #Ahora es el turno de la banca
-main_banca = sample(lista_cartas, 2)
-score_banca = sum(cartas[carta] for carta in main_banca)
-print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0], main_banca[1], score_banca))
+    main_banca = sample(lista_cartas, 2)
+    score_banca = sum(cartas[carta] for carta in main_banca)
+    print("La banca tiene: {} {} puntos y la suya es de {} puntos.".format(main_banca[0], main_banca[1], score_banca))
 
 #La puntuación de mi juego depende del valor de las cartas repartidas.
-if score > 21:
-    print("Lo lamento, su valor es mayor de 21, el ganandor ha sido la banca.")
-if score == score_banca:
-    print("Ha habido un empate entre usted y la banca.")
-if score < 21 and score < score_banca:
-    print("El ganador fue la banca.")
-if score < 21 and score > score_banca:
-    print("¡Enhorabuena! Consiguió realiza un Blackjack, ha ganado la partida.")
-play_again= input("¿Desea volver a jugar? 1)Si 2)No")
-play_again= play_again.lower()
-if play_again == "1":
-    play()
-if play_again == "2":
-    print("¡Nos vemos pronto!")
+    if score > 21:
+        print("Lo lamento, su valor es mayor de 21, el ganandor ha sido la banca.")
+    if score == score_banca:
+        print("Ha habido un empate entre usted y la banca.")
+    if score < 21 and score < score_banca:
+        print("El ganador fue la banca.")
+    if score < 21 and score > score_banca:
+        print("¡Enhorabuena! Obtuvo más punto que la banca, ha ganado la partida.")
+    if score == 21:
+        print("¡Enhorabuena! Usted a logrado un Blackjack, ha ganado la partida.")
+    play_again= input("¿Desea volver a jugar? 1)Si 2)No")
+    play_again= play_again.lower()
+    if play_again == "1":
+        game()
+    if play_again == "2":
+        print("¡Nos vemos pronto!")
 
 #Creamos la función para generar el juego
-play()
+game()
